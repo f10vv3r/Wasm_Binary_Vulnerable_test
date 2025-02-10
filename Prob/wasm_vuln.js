@@ -2015,10 +2015,10 @@ var _buffer_overflow = Module["_buffer_overflow"] = createExportWrapper("buffer_
 var _format_string_bug = Module["_format_string_bug"] = createExportWrapper("format_string_bug");
 
 /** @type {function(...*):?} */
-var _use_after_free = Module["_use_after_free"] = createExportWrapper("use_after_free");
+var _out_of_bound = Module["_out_of_bound"] = createExportWrapper("out_of_bound");
 
 /** @type {function(...*):?} */
-var _out_of_bound = Module["_out_of_bound"] = createExportWrapper("out_of_bound");
+var _use_after_free = Module["_use_after_free"] = createExportWrapper("use_after_free");
 
 /** @type {function(...*):?} */
 var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");

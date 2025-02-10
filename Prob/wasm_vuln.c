@@ -25,7 +25,7 @@ EMSCRIPTEN_KEEPALIVE
 void out_of_bound(int input) {
     printf("wasm oob test\n");
 
-    char buffer[8] = "CAT_CERT";
+    char buffer[8] = "CERTCERT";
     printf("%c", buffer[input]);
     printf("\n");
 }
