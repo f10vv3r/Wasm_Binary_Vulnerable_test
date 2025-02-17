@@ -9,7 +9,7 @@ void buffer_overflow(char* input) {
     printf("wasm bof test\n");
 
     char buffer[8];
-    char buffer1[8]="boftest"
+    char buffer1[8]="bofbof";
 
     strcpy(buffer, input);
     printf("%s", buffer);
