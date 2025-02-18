@@ -18,6 +18,8 @@
     <button onclick="FormatString()">Format String Bug</button>
     <button onclick="OutOfBound()">Out-of-Bounds</button>
     <button onclick="UseAfterFree()">Use-After-Free</button>
+    <button onclick="doubleFree()">Double_Free</button>
+    <button onclick="integerOverflow()">Integer_Overflow</button>
 
     <p id="output"></p>
 
@@ -34,6 +36,8 @@
                 formatStringBug = Module.cwrap('format_string_bug', 'void', ['string']);
                 outOfBound = Module.cwrap('out_of_bound', 'void', ['number']);
                 useAfterFree = Module.cwrap('use_after_free', 'void', ['string']);
+                doubleFree = Module.cwrap('double_free', 'void');
+                integerOverflow = Module.cwrap('integer_overflow', 'void', ['string']);
 
             };
         } else {
@@ -54,9 +58,9 @@
             if (bufferOverflow) {
                 try {
                     bufferOverflow(input);
-                    logMessage("Buffer Overflow test executed.");
+                    logMessage("Buffer-Overflow test executed.");
                 } catch (e) {
-                    logMessage("Buffer Overflow Error: " + e);
+                    logMessage("Buffer-Overflow Error: " + e);
                 }
             } else {
                 logMessage("WASM Module not loaded yet.");
@@ -69,9 +73,9 @@
             if (formatStringBug) {
                 try {
                     formatStringBug(input);
-                    logMessage("Format String Bug test executed.");
+                    logMessage("Format-String-Bug test executed.");
                 } catch (e) {
-                    logMessage("Format String Bug Error: " + e);
+                    logMessage("Format-String-Bug Error: " + e);
                 }
             } else {
                 logMessage("WASM Module not loaded yet.");
@@ -102,6 +106,34 @@
                     logMessage("Use-After-Free test executed.");
                 } catch (e) {
                     logMessage("Use-After-Free Error: " + e);
+                }
+            } else {
+                logMessage("WASM Module not loaded yet.");
+            }
+        }
+        
+        function DoubleFree() {
+            console.log("DFB test start");
+            if (doubleFree) {
+                try {
+                    doubleFree();
+                    logMessage("Double-Free test executed.");
+                } catch (e) {
+                    logMessage("Double-Free Error: " + e);
+                }
+            } else {
+                logMessage("WASM Module not loaded yet.");
+            }
+        }
+
+        function IntegerOverflow() {
+            console.log("Integer-Overflow test start");
+            if (integerOverflow) {
+                try {
+                    integerOverflow();
+                    logMessage("Integer-Overflow test executed.");
+                } catch (e) {
+                    logMessage("Integer-Overflow Error: " + e);
                 }
             } else {
                 logMessage("WASM Module not loaded yet.");

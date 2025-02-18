@@ -2021,6 +2021,12 @@ var _out_of_bound = Module["_out_of_bound"] = createExportWrapper("out_of_bound"
 var _use_after_free = Module["_use_after_free"] = createExportWrapper("use_after_free");
 
 /** @type {function(...*):?} */
+var _double_free = Module["_double_free"] = createExportWrapper("double_free");
+
+/** @type {function(...*):?} */
+var _integer_overflow = Module["_integer_overflow"] = createExportWrapper("integer_overflow");
+
+/** @type {function(...*):?} */
 var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
 
 /** @type {function(...*):?} */
